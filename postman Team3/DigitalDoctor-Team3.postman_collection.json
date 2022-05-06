@@ -1,0 +1,713 @@
+{
+	"info": {
+		"_postman_id": "0172a397-ad79-4a87-b854-db1380d1bccb",
+		"name": "DigitalDoctor-Team3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User service-Get Doctor using Email",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"check status code of api\",function(){",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"check status code of api not to have 404\",function(){",
+							"    pm.response.to.not.have.status(404);",
+							"})",
+							"",
+							"pm.test(\"check id of the 0th index element\",function(){",
+							"    var jsonData=pm.response.json();",
+							"    pm.expect(jsonData.doctorName).to.eql(\"Zaffer\");",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/doctor/Zaffer@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"doctor",
+						"Zaffer@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User service-Get Patient using Email",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"check status code of api\",function(){",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"check status code of api not to have 404\",function(){",
+							"    pm.response.to.not.have.status(404);",
+							"})",
+							"",
+							"pm.test(\"check id of the 0th index element\",function(){",
+							"    var jsonData=pm.response.json();",
+							"    pm.expect(jsonData.patientName).to.eql(\"Alia\");",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/patient/Alia@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"patient",
+						"Alia@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User service-Get Doctor using specialization and city",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"check status code of api\",function(){",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"check status code of api not to have 404\",function(){",
+							"    pm.response.to.not.have.status(404);",
+							"})",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/doctor/Pediatrician/Chennai",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"doctor",
+						"Pediatrician",
+						"Chennai"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User service-Update Doctor using Email",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"check status code of api\",function(){",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"check status code of api not to have 404\",function(){",
+							"    pm.response.to.not.have.status(404);",
+							"})",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"doctorEmail\":\"John@gmail.com\",\n\t\"specialization\":\"Dentits\",\n\t\"yearsOfExperience\":3,\n\t\"doctorName\":\"John\",\n    \"password\":\"John@203\",\n\t\"city\":\"Noida\",\n\t\"image\":\"Jpeg\"\n\t}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/doctor/John@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"doctor",
+						"John@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User service-Update Patient Using Email",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"check status code of api\",function(){",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"check status code of api not to have 404\",function(){",
+							"    pm.response.to.not.have.status(404);",
+							"})",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n     \"patientEmail\":\"Alia@gmail.com\",\n     \"patientName\":\"Bhat\",\n     \"patientmobileNumber\":\"9954346786\",\n     \"password\":\"Bhat@987\",\n     \"city\":\"India\",\n     \"patientImage\":\"Jpeg\"\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/patient/Alia@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"patient",
+						"Alia@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User service-Create Doctor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"check status code of api\",function(){",
+							"    pm.response.to.have.status(201);",
+							"})",
+							"",
+							"pm.test(\"check status code of api not to have 404\",function(){",
+							"    pm.response.to.not.have.status(404);",
+							"})",
+							"",
+							"pm.test(\"check the Name of the index element\",function(){",
+							"    var jsonData=pm.response.json();",
+							"    pm.expect(jsonData.doctorName).to.eql(\"Zaffer\");",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"doctorEmail\":\"mark@gmail.com\",\n\t\"specialization\":\"Skin\",\n\t\"yearsOfExperience\":6,\n\t\"doctorName\":\"Mark\",\n    \"password\":\"Mark@203\",\n\t\"city\":\"Pune\",\n\t\"image\":\"Jpeg\"\n\t}\n\n    ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/doctor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"doctor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User service-create Patient",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"check status code of api\",function(){",
+							"    pm.response.to.have.status(201);",
+							"})",
+							"",
+							"pm.test(\"check status code of api not to have 404\",function(){",
+							"    pm.response.to.not.have.status(404);",
+							"})",
+							"",
+							"pm.test(\"check the Name of the index element\",function(){",
+							"    var jsonData=pm.response.json();",
+							"    pm.expect(jsonData.patientName).to.eql(\"Williams\");",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n     \"patientEmail\":\"Williams@gmail.com\",\n     \"patientName\":\"Williams\",\n     \"patientmobileNumber\":\"9954346786\",\n     \"password\":\"Williams@1234\",\n     \"city\":\"Delhi\",\n     \"patientImage\":\"Jpeg\"\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/patient",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"patient"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authentication-register",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"check status code of api\",function(){",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"check status code of api not to have 404\",function(){",
+							"    pm.response.to.not.have.status(404);",
+							"})",
+							"",
+							"pm.test(\"check the Name of the index element\",function(){",
+							"    var jsonData=pm.response.json();",
+							"    pm.expect(jsonData.role).to.eql(\"doctor\");",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"emailId\":\"Abraham@gmail.com\",\n\"password\":\"Abraham@203\",\n\"role\":\"doctor\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8095/api/v1/user/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8095",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authentication-login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"check status code of api\",function(){",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"check status code of api not to have 404\",function(){",
+							"    pm.response.to.not.have.status(404);",
+							"})",
+							"",
+							"pm.test(\"check the Name of the index element\",function(){",
+							"    var jsonData=pm.response.json();",
+							"    pm.expect(jsonData.message).to.eql(\"authenticated user\");",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"emailId\":\"John@gmail.com\",\n\"password\":\"John@203\",\n\"role\":\"doctor\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8095/api/v1/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8095",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Appointment-Service create slot by doctor",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"check status code of api\",function(){",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"check status code of api not to have 404\",function(){",
+							"    pm.response.to.not.have.status(404);",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"slotId\": \"5\",\n    \"doctorEmailId\": \"kim@gmail.com\",\n    \"specialization\":\"Physicians\",\n    \"slotDate\":\"2021-02-14\" ,\n    \"slotStartTime\": \"22:04:04\",\n    \"slotEndTime\": \"23:05:05\",\n    \"slotStatus\": \"AVAILABLE\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8060/api/v1/doctor/slot",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8060",
+					"path": [
+						"api",
+						"v1",
+						"doctor",
+						"slot"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Appointment Service-create patient",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"check status code of api\",function(){",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"check status code of api not to have 404\",function(){",
+							"    pm.response.to.not.have.status(404);",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"slotId\": \"2\",\n    \"doctorEmail\": \"Hendry@gmail.com\",\n    \"patientEmail\":\"Lot@gmail.com\",\n    \"specialization\":\"psycologits\",\n    \"appointmentDate\":\"2021-02-14\" ,\n    \"appointmentStartTime\": \"22:04:04\",\n    \"appointmentEndTime\": \"23:05:05\",\n    \"appointmentStatus\": \"CANCELLED\"\n    \n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8060/api/v1/patient/appointmentSlots",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8060",
+					"path": [
+						"api",
+						"v1",
+						"patient",
+						"appointmentSlots"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Appointment-service change the status of the slot",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"check status code of api\",function(){",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"check status code of api not to have 404\",function(){",
+							"    pm.response.to.not.have.status(404);",
+							"})",
+							"pm.test(\"check slotStatus of index element\",function(){",
+							"    var jsonData=pm.response.json();",
+							"    pm.expect(jsonData.slotStatus).to.eql(\"BOOKED\");",
+							"",
+							"})",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"slotId\": \"3\",\n    \"doctorEmailId\": \"Adam@gmail.com\",\n    \"specialization\":\"Cardiologists\",\n    \"slotDate\":\"2021-02-14\" ,\n    \"slotStartTime\": \"22:04:04\",\n    \"slotEndTime\": \"23:05:05\",\n    \"slotStatus\": \"BOOKED\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8060/api/v1/doctor/slot/status/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8060",
+					"path": [
+						"api",
+						"v1",
+						"doctor",
+						"slot",
+						"status",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Appointment service Get by Apponitment Slot",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"check status code of api\",function(){",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"check status code of api not to have 404\",function(){",
+							"    pm.response.to.not.have.status(404);",
+							"})",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8060/api/v1/appointmentSlot/Tim@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8060",
+					"path": [
+						"api",
+						"v1",
+						"appointmentSlot",
+						"Tim@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Appointment-service Get by Slot Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8060/api/v1/doctor/slot/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8060",
+					"path": [
+						"api",
+						"v1",
+						"doctor",
+						"slot",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Appointment-Service get by Appointment Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"check status code of api\",function(){",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"check status code of api not to have 404\",function(){",
+							"    pm.response.to.not.have.status(404);",
+							"})",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8060/api/v1/appointmentDetails/c863207c-4bb1-4226-886e-ac828a73168b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8060",
+					"path": [
+						"api",
+						"v1",
+						"appointmentDetails",
+						"c863207c-4bb1-4226-886e-ac828a73168b"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
